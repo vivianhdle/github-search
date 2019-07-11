@@ -1,5 +1,22 @@
+.issues::-webkit-scrollbar {
+    display: none;
+}
+.repsitories::-webkit-scrollbar {
+    display: none;
+}
 .search-result{
     margin:1rem 0 ;
+}
+.repsitories{
+    height:80vh;
+    overflow-y: scroll;
+}
+.issue{
+    margin:.25rem 0;
+}
+.issues{
+    height:80vh;
+    overflow-y: scroll;
 }
 .card-title{
     display:inline-block;
@@ -9,4 +26,7 @@
 }
 .details{
     margin:0 .25rem;
+}
+.row{
+    margin:0;
 }

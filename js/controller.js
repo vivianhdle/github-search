@@ -14,7 +14,7 @@ angular.module('gitSearch').controller('controller',function($scope,gitFactory){
     $scope.getIssues = function(name){
         gitFactory.getIssues(name).then(function(data,error){
             $scope.issues = data.data.items;
-            console.log($scope.search);
+            console.log('issues:',$scope.issues);
         }).catch(function(error){
             console.log(error);
         })

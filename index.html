@@ -18,24 +18,33 @@
                 </div>
         </div>
     </form>
-    <div class="container">
-        <div class="search-result col-8" ng-repeat="repository in search">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">{{repository.name}}</h5>
-                    <span class="details badge badge-pill badge-secondary">
-                        Forked <span class="badge badge-light">{{repository.forks_count}}</span>
-                    </span>
-                    <span class="details badge badge-pill badge-warning">
-                        Stargazers <span class="badge badge-light">{{repository.stargazers_count}}</span>
-                    </span>
-                    <spa  class="details badge badge-pill badge-danger">
-                        Open Issues <span class="badge badge-light">{{repository.open_issues_count}}</span>
-                    </span>
+    <div class="row">
+        <div class="col-6 offset-1 repsitories">
+            <div class="search-result" ng-repeat="repository in search">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">{{repository.name}}</h5>
+                        <span class="details badge badge-pill badge-secondary">
+                            Forked <span class="badge badge-light">{{repository.forks_count}}</span>
+                        </span>
+                        <span class="details badge badge-pill badge-warning">
+                            Stargazers <span class="badge badge-light">{{repository.stargazers_count}}</span>
+                        </span>
+                        <spa  class="details badge badge-pill badge-danger">
+                            Open Issues <span class="badge badge-light">{{repository.open_issues_count}}</span>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{repository.description}}</p>
+                        <button ng-click="getIssues(repository.full_name)" class="btn btn-primary">View Issues</button>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-text">{{repository.description}}</p>
-                    <button ng-click="getIssues(repository.full_name)" class="btn btn-primary">View Issues</button>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="issues">
+                <div class="list-group">
+                    <a href={{issue.html_url}} target="_blank" class="issue list-group-item list-group-item-action" ng-repeat="issue in issues">{{issue.title}}</a>
                 </div>
             </div>
         </div>

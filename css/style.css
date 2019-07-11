@@ -1,21 +1,30 @@
+header{
+    height:10vh;
+    display:flex;
+    justify-content: center;
+}
+.title{
+    font-size:2rem;
+    align-self: center;
+}
 .issues::-webkit-scrollbar {
     display: none;
 }
-.repsitories::-webkit-scrollbar {
+.repositories::-webkit-scrollbar {
     display: none;
 }
 .search-result{
     margin:1rem 0 ;
 }
-.repsitories{
-    height:80vh;
+.repositories{
+    height: 72vh;
     overflow-y: scroll;
 }
 .issue{
-    margin:.25rem 0;
+    margin-top:1rem;
 }
 .issues{
-    height:80vh;
+    height: 72vh;
     overflow-y: scroll;
 }
 .card-title{
@@ -29,4 +38,10 @@
 }
 .row{
     margin:0;
+}
+.total-found{
+    display:none;
+}
+.issue-title{
+    display:none;
 }

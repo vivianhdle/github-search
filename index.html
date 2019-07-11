@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/6fd7bfaf7e.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>Git Search</title>
 </head>
 <body ng-app="gitSearch" ng-controller="controller">
@@ -17,10 +18,34 @@
                 </div>
         </div>
     </form>
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                
+    <div class="row">
+        <div class="col-6 offset-1 repsitories">
+            <div class="search-result" ng-repeat="repository in search">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">{{repository.name}}</h5>
+                        <span class="details badge badge-pill badge-secondary">
+                            Forked <span class="badge badge-light">{{repository.forks_count}}</span>
+                        </span>
+                        <span class="details badge badge-pill badge-warning">
+                            Stargazers <span class="badge badge-light">{{repository.stargazers_count}}</span>
+                        </span>
+                        <spa  class="details badge badge-pill badge-danger">
+                            Open Issues <span class="badge badge-light">{{repository.open_issues_count}}</span>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{repository.description}}</p>
+                        <button ng-click="getIssues(repository.full_name)" class="btn btn-primary">View Issues</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="issues">
+                <div class="list-group">
+                    <a href={{issue.html_url}} target="_blank" class="issue list-group-item list-group-item-action" ng-repeat="issue in issues">{{issue.title}}</a>
+                </div>
             </div>
         </div>
     </div>

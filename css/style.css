@@ -1,0 +1,12 @@
+.search-result{
+    margin:1rem 0 ;
+}
+.card-title{
+    display:inline-block;
+}
+.badge{
+    font-size: .75rem;
+}
+.details{
+    margin:0 .25rem;
+}
